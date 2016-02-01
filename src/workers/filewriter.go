@@ -36,7 +36,19 @@ func FileWorker(f *os.File, q <-chan map[int]data.Sum, gi int) {
 				tmp += ", "
 			}
 		} else if gi == 10002 {
+			for _, v := range id10002 {
+				tmp += strconv.Itoa(sd[v].Count)
+				tmp += ", "
+				tmp += strconv.FormatFloat(sd[v].Amount, 'G', -1, 64)
+				tmp += ", "
+			}
 		} else if gi == 10003 {
+			for _, v := range id10003 {
+				tmp += strconv.Itoa(sd[v].Count)
+				tmp += ", "
+				tmp += strconv.FormatFloat(sd[v].Amount, 'G', -1, 64)
+				tmp += ", "
+			}
 		} else if gi == 20004 {
 		}
 		tmp += time.Now().Format("2006-01-02T15:04:05.999")
